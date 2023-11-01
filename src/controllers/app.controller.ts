@@ -1,9 +1,13 @@
 namespace App {
-    const ngApp = angular.module('App', ['TplMainModule', 'ngRoute'])
+    const ngApp = angular.module('App', ['TplMainModule', 'UserServiceModule', 'ngRoute'])
 
-    export class AppController implements angular.IController 
+    export class AppController implements angular.IController
     {
-    
+        constructor(
+            private scope: angular.IScope, 
+        ) 
+        {
+        }
     }
 
     AppController.$inject = ['$scope'];
@@ -14,7 +18,9 @@ namespace App {
             redirectTo: '/post'
         })
         .when('/login', {
-            templateUrl : `${config.controllerPath}/login/login.controller.html`
+            templateUrl : `${config.controllerPath}/login/login.controller.html`,
+            controller: 'loginController',
+            controllerAs: 'vm'
         })
         .when('/album', {
             templateUrl : `${config.controllerPath}/contents/album/album.controller.html`,

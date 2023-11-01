@@ -9,15 +9,14 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "@types/angular": "^1.8.7",
-    "@types/angular-cookies": "^1.8.3",
-    "@types/angular-route": "^1.7.5"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@babel/cli": "^7.23.0",
     "@babel/core": "^7.23.2",
     "@babel/preset-env": "^7.23.2",
-    "@babel/preset-typescript": "^7.23.2"
+    "@babel/preset-typescript": "^7.23.2",
+    "@types/angular": "^1.8.7",
+    "@types/angular-cookies": "^1.8.3",
+    "@types/angular-route": "^1.7.5"
   }
 }

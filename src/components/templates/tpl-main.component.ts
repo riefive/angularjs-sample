@@ -22,13 +22,20 @@ namespace App
             ]
         }
 
+        OnSignOut()
+        {
+            setTimeout(() => {
+                location.href = '#!/login'
+            }, 10)
+        }
+
         OnMenuClick(keyName: string) 
         {
             this.menuActive = keyName
             const hashed = `#!/${keyName}`
             setTimeout(() => {
                 location.href = hashed
-            }, 150)
+            }, 10)
         }
     }
 
