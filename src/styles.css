@@ -1,0 +1,9 @@
+.side {
+    width: 280px;
+    height: 100vh;
+}
+
+.cursor-pointer {
+    user-select: none;
+    cursor: pointer;
+}

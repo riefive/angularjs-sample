@@ -1,0 +1,7 @@
+"use strict";
+
+var config = {
+  componentPath: '/assets/js/components',
+  controllerPath: '/assets/js/controllers'
+};
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6WyJjb25maWciLCJjb21wb25lbnRQYXRoIiwiY29udHJvbGxlclBhdGgiXSwic291cmNlcyI6WyIuLi8uLi8uLi9zcmMvY29uZmlnL2NvbmZpZy50cyJdLCJzb3VyY2VzQ29udGVudCI6WyJjb25zdCBjb25maWcgPSB7XHJcbiAgICBjb21wb25lbnRQYXRoOiAnL2Fzc2V0cy9qcy9jb21wb25lbnRzJyxcclxuICAgIGNvbnRyb2xsZXJQYXRoOiAnL2Fzc2V0cy9qcy9jb250cm9sbGVycydcclxufTtcclxuIl0sIm1hcHBpbmdzIjoiOztBQUFBLElBQU1BLE1BQU0sR0FBRztFQUNYQyxhQUFhLEVBQUUsdUJBQXVCO0VBQ3RDQyxjQUFjLEVBQUU7QUFDcEIsQ0FBQyJ9

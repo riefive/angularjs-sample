@@ -1,0 +1,30 @@
+<main class="d-flex flex-row flex-nowrap">
+    <div class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark side">
+        <a class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+            <i class="bi bi-bootstrap mx-2"></i>
+            <span class="fs-4">Json Typicode</span>
+        </a>
+        <hr>
+        <ul class="nav nav-pills flex-column mb-auto">
+            <li ng-repeat="(k, v) in vm.menus" class="cursor-pointer" ng-click="vm.OnMenuClick(v.id)">
+                <span class="nav-link text-white" ng-class="{ 'active': vm.menuActive == v.id }" aria-current="page">
+                    <i class="bi {{ v.icon }} mx-2"></i>
+                    {{ v.title }}
+                </span>
+            </li>
+        </ul>
+        <hr>
+        <div class="dropdown">
+            <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
+                <strong>Test</strong>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+                <li><a class="dropdown-item" href="#">Sign out</a></li>
+            </ul>
+        </div>
+    </div>
+    <div>
+        <div ng-transclude="body"></div>
+    </div>
+</main>
