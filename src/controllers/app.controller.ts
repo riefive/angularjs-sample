@@ -1,5 +1,14 @@
 namespace App {
-    const ngApp = angular.module('App', ['TplMainModule', 'UserServiceModule', 'ngRoute'])
+    const ngApp = angular.module('App', [
+        'TplMainModule',
+        'AlbumServiceModule',
+        'CommentServiceModule',
+        'PhotoServiceModule',
+        'PostServiceModule',
+        'TodoServiceModule',
+        'UserServiceModule', 
+        'ngRoute'
+    ])
 
     export class AppController implements angular.IController
     {

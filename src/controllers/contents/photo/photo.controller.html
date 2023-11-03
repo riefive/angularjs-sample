@@ -1,3 +1,21 @@
 <template-main id="photo">
-    <div>Photo</div>
+    <div class="p-2">
+        <table class="table table-responsive table-striped w-100 d-block d-md-table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th ng-repeat="(k, v) in vm.columns" scope="col">
+                        {{ v }}
+                    </th>
+                </tr>
+            </thead>
+            <tbody ng-if="vm.count > 0 && vm.data.length > 0">
+                <tr ng-repeat="(j, v) in vm.data">
+                  <th scope="row">{{ j+1 }}</th>
+                  <td>{{ v.title }}</td>
+                  <td>{{ v.thumbnailUrl }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </template-main>

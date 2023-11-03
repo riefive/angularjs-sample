@@ -2,17 +2,22 @@ namespace App
 {
     let ng = angular.module('App');
 
-    class CommentController implements angular.IController, angular.IOnInit
+    class CommentController implements angular.IController
     {
+        public columns: string[]
+        public data: any = null
+        public count: number = 0
+
         constructor(
             private commentService: CommentService
         ) 
         {
-        }
-
-        $onInit(): void {
+            this.columns = ['Name', 'Email']
             this.commentService.GetAll().then((result) => {
-                console.log(result)
+                this.count = Array.isArray(result?.data) ? result.data.length : 0
+            })
+            this.commentService.GetByParams({ page: 1, limit: 10 }).then((result) => {
+                this.data = Array.isArray(result?.data) ? result.data : []
             })
         }
     }

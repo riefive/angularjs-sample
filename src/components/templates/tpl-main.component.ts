@@ -3,23 +3,29 @@ namespace App
     let ng = angular.module('TplMainModule', []);
 
     export class TplMainComponent implements angular.IController, angular.IOnInit {
+        id: string
         menus: any[] = []
         menuActive: string = 'post'
 
-        constructor() { }
+        constructor(
+            private location: any
+        ) 
+        {
+        }
         
         $onInit(): void 
         {
             const currentPath = location.hash?.replace('#!/', '').trim()
             this.menuActive = currentPath
             this.menus = [
-                { id: 'post', icon: 'bi-grid', title: 'Post', path: '/' },
-                { id: 'comment', icon: 'bi-chat', title: 'Comment', path: '/' },
-                { id: 'album', icon: 'bi-images', title: 'Album', path: '/' },
-                { id: 'photo', icon: 'bi-image', title: 'Photo', path: '/' },
-                { id: 'todo', icon: 'bi-check2-square', title: 'Todo', path: '/' },
-                { id: 'user', icon: 'bi-person-circle', title: 'User', path: '/' }
+                { id: 'post', icon: 'bi-grid', title: 'Post', path: '/post' },
+                { id: 'comment', icon: 'bi-chat', title: 'Comment', path: '/comment' },
+                { id: 'album', icon: 'bi-images', title: 'Album', path: '/album' },
+                { id: 'photo', icon: 'bi-image', title: 'Photo', path: '/photo' },
+                { id: 'todo', icon: 'bi-check2-square', title: 'Todo', path: '/todo' },
+                { id: 'user', icon: 'bi-person-circle', title: 'User', path: '/user' }
             ]
+            console.log(this.id)
         }
 
         OnSignOut()
@@ -32,6 +38,8 @@ namespace App
         OnMenuClick(keyName: string) 
         {
             this.menuActive = keyName
+            const hashedCurrent = this.location.path()
+            console.log(hashedCurrent)
             const hashed = `#!/${keyName}`
             setTimeout(() => {
                 location.href = hashed
@@ -39,7 +47,7 @@ namespace App
         }
     }
 
-    TplMainComponent.$inject = [];
+    TplMainComponent.$inject = ['$location'];
 
     let component: angular.IComponentOptions = {
         controller: TplMainComponent,
